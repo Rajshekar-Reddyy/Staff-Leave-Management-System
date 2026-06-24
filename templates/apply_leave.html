@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+
+<body>
+    <h2>APPLY LEAVE</h2>
+    <form action="" method="post">
+
+        {% csrf_token %}
+        <label for="">Leave Type</label>
+    <select name="leave_type" required id="">
+        <option value="">Select Leave</option>
+        <option value="Casual Leave">Casual Leave</option>
+        <option value="Skick Leave">Skick Leave</option>
+        <option value="Emergency Leave">Emergency Leave</option>
+    </select>
+    <label for="">Start Date</label>
+    <input type="date" name="start" required id="">
+    <label for="">End Date</label>
+    <input type="date" name="end" required id="">
+    <label for="">Reason</label>
+    <textarea name="reason" required id=""></textarea>
+    <button type="{% url 'staff_dashboard' %}">Submit</button>
+</form>
+
+</body>
+
+</html>

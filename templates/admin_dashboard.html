@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin_dashboard</title>
+</head>
+<body>
+    {% csrf_token %}
+    <h2>ADMIN DASHBOARD</h2>
+    <a href="{% url 'view_leaves' %}">View Leave Requests</a>
+    <a href="{% url 'logout'%}">Logout</a>
+    <h3>Total Leave Requests</h3>
+    <p>Manage All Staff Leave Applications</p>
+    <a href="{% url 'view_leaves' %}">Open</a>
+    <h3>Staff Management</h3>
+    <p>view registered staff users</p>
+    <a href="{% url 'manage_staff' %}">manage staff</a>
+</body>
+</html>

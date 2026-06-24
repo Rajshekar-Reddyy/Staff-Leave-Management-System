@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: black;
+        color: white;
+        border: 5px solid red;
+        width: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 34% ;
+        margin-top: 100px;
+        padding: 10px;
+        border-radius: 10px;
+        h1{
+            text-decoration: underline;
+
+        }
+    }
+</style>
+<body>
+    <center>
+
+        <h1>SLMS REGISTRATION</h1>
+        <h2>STAFF LEAVE MANAGEMENT SYSTEM</h2>
+        <form action="" method="Post">
+            {% csrf_token %} <br><br>
+            <label for="">USERNAME</label>
+            <input type="text" name="username" required><br><br>
+            <label for="">PASSWORD</label>
+        <input type="password" name="password" required id=""><br><br>
+        <label for="">Role</label>
+        <select name="role" required id="">
+            <option value="">--- Select Role -</option>
+            <option value="admin">Admin</option>
+            <option value="staff">staff</option>
+        </select>
+        <p>Admin can manage staff and aprove leave requests.</p>
+        <button type="submit" >Register</button>
+    </form>
+    <p>Already have an account <a href="{% url 'login' %}">Login</a></p>
+    <p><a href="{% url 'home' %}">Back to Home</a></p>
+</center>
+</body>
+</html>

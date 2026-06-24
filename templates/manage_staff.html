@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: black;
+        color: white;
+        text-decoration: underline;
+    }
+    h2{
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+</style>
+<body>
+    <center>
+
+        <h2>Manage Staff</h2>
+        <a href="{% url 'add_staff' %}">+Add Staff</a><br><br>
+        <table border="2px">
+            <tr>
+                <th>Username</th>
+                <th>Actions</th>
+            </tr>
+            {% for i in staff_list %}
+            <tr>
+                <td>{{ i.username }}</td>
+            <td>
+                <a href="{% url 'edit_staff' i.id %}">Edit</a>
+                <a href="{% url 'delete_staff' i.id %}"onclick="return confirm('Are you sure?')">Delete</a>
+                
+            </td>
+        </tr>
+        {% empty %}
+        <tr><td>No Staff Found</td></tr>
+        {% endfor %}
+        
+    </table>
+    <br>
+    <a href="{% url 'admin_dashboard' %}">Back To Dashboard</a>
+    
+</center>
+</body>
+</html>

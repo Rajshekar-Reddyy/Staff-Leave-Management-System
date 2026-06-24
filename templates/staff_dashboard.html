@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1{
+        margin-left: 650px;
+        text-transform: uppercase;
+    }
+    nav{
+        display: flex;
+        justify-content: space-between;
+        a{
+            font-size: 25px;
+            margin-top: 15px;
+        }
+        border-bottom: 5px solid black;
+    }
+    .apply{
+           border: 2px solid black;
+           width: 40%;
+           padding: 20px;
+           margin-top: 70px;
+    }
+    .status{
+         border: 2px solid black;
+           width: 40%;
+           padding: 20px;
+           margin-top: 70px;
+
+    }
+    .both{
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+</style>
+<body>
+    <nav>
+        <h2>SLMS>Staff</h2>
+        <a href="{% url 'logout' %}">LOGOUT</a>
+    </nav>
+    <h1>WELCOME,{{request.user.username}}</h1>
+    <div class="both">
+
+        <div class="apply">
+           
+            <h5>APPLY LEAVE</h5>
+            <p>Submit a new leave request</p>
+            <a href="{% url 'apply_leave' %}">APPLY</a>
+        </div>
+        <div class="status">
+            <h5>MY LEAVE STATUS</h5>
+            <p>View your leave request</p>
+            <a href="{% url 'my_leaves' %}">VIEW</a>
+        </div>
+    </div>
+</body>
+</html>
